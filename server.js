@@ -10,9 +10,10 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:4173' , 'https://premparthent.netlify.app/'],
+  origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:4173' , 'https://premparthent.netlify.app'],
   credentials: true
 }));
+app.options('*', cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
